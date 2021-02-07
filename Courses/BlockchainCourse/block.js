@@ -16,7 +16,7 @@ class Block { // ved at wrappe parametrene i {} gør det så man ikke senere ska
         return new this({
             timestamp: Date.now(),
             lastHash: lastBlock.hash,
-            data: 
+            data
         })
     }
 }
