@@ -1,0 +1,19 @@
+{
+  "name": "blockchaincourse",
+  "version": "1.0.0",
+  "description": "Result of a udemy Course",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "block",
+    "blockchain",
+    "chain"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
