@@ -1,4 +1,5 @@
-const { GENESIS_DATA} = require('./config')
+const { GENESIS_DATA} = require('./config');
+const cryptoHash = require('./crypto-hash');
 
 class Block { // ved at wrappe parametrene i {} gør det så man ikke senere skal indføre det i denne rækkefølge, Map funktionen gør dette muligt
     constructor({timestamp, lastHash, hash, data}) {
@@ -13,10 +14,14 @@ class Block { // ved at wrappe parametrene i {} gør det så man ikke senere ska
     }
 
     static mineBlock({ lastBlock, data}) {
+        const timestamp = Date.now();
+        const lastHash = lastBlock.hash
+
         return new this({
-            timestamp: Date.now(),
-            lastHash: lastBlock.hash,
-            data
+            timestamp,
+            lastHash,
+            data,
+            hash: cryptoHash(timestamp, lastHash, data)
         })
     }
 }
