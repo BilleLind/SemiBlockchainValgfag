@@ -1,3 +1,5 @@
+const { GENESIS_DATA} = require('./config')
+
 class Block { // ved at wrappe parametrene i {} gør det så man ikke senere skal indføre det i denne rækkefølge, Map funktionen gør dette muligt
     constructor({timestamp, lastHash, hash, data}) {
         this.timestamp = timestamp;
@@ -5,9 +7,9 @@ class Block { // ved at wrappe parametrene i {} gør det så man ikke senere ska
         this.hash = hash;
         this.data = data;
     }
+
+    static genesis() {
+        return new this(GENESIS_DATA);
+    }
 }
-
-
-
-
-export default Block;
+module.exports = Block;
