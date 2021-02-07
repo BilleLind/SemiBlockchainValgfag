@@ -22,6 +22,15 @@ Mining
 - proof of work : "computational puzzle algorime"
 => løsning af proof of work => tilføjes det til netværket.
 ---
+chain validation
+- at kontrollere kæden(chain)
+* correct block fields present
+* actual lastHash reference 
+* valid hash
+---
+chain replacement
+- når der skal flere block ind i chainen
+---
 
 
 
