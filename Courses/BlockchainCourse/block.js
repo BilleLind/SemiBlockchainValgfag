@@ -8,4 +8,6 @@ class Block { // ved at wrappe parametrene i {} gør det så man ikke senere ska
 }
 
 
-module.exports = Block;
+
+
+export default Block;
