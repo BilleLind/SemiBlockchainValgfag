@@ -31,6 +31,23 @@ chain validation
 chain replacement
 - når der skal flere block ind i chainen
 ---
+Proof of work
+- since it requires computationel power, it is expensive to attack the blockchain, since they would need to rewrite multiple instead of
+  if they mined a single block.
+- inspired by "hashCash"
+- SHA-246 in hex is easier to crack then it in its binary form.
+- 
+
+---
+51% Attack
+- evil miner: have more than 50% of the computationel power of the blockchain network
+
+---
+Mining rate
+- the system reculates the mining rate closer to the set value, by either lowering og highering the dificulty of the mine.
+
+---
+
 
 
 
