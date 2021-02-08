@@ -1,5 +1,6 @@
+const { it, expect } = require("@jest/globals");
 const Block = require("./block");
-const {GENESIS_DATA } = require('./config');
+const { GENESIS_DATA } = require('./config');
 const cryptoHash = require('./crypto-hash');
 
 describe('Block', () => {
@@ -13,13 +14,21 @@ describe('Block', () => {
     //     data: data,
     //     hash: hash,
     // }); dette er muligt da datatypen er den samme, så man kun skal skrive det ind en gang.
-    const block = new Block({timestamp, lastHash, data, hash})
+
+    const nonce = 1;
+    const difficulty = 1;
+
+    const block = new Block({timestamp, lastHash, data, hash, nonce, difficulty})
+
+    
 
     it('has a timestamp, lastHash, data, hash property', () =>{
         expect(block.timestamp).toEqual(timestamp);
         expect(block.lastHash).toEqual(lastHash);
         expect(block.hash).toEqual(hash);
         expect(block.data).toEqual(data);
+        expect(block.nonce).toEqual(nonce);
+        expect(block.difficulty).toEqual(difficulty);
     });
 
     describe('Genesis()', () =>{
@@ -57,7 +66,22 @@ describe('Block', () => {
 
         it('creates a sha-256 ´hash´ based on the proper inputs', () => {
             expect(minedBlock.hash)
-            .toEqual(cryptoHash(minedBlock.timestamp, lastBlock.hash, data));
-        })
+            .toEqual(
+                cryptoHash(
+                    minedBlock.timestamp, 
+                    minedBlock.nonce, 
+                    minedBlock.difficulty, 
+                    lastBlock.hash, 
+                    data
+                )
+            );
+        });
+
+        it('sets a ´hash´ that matches the dificulty criteria', () =>{
+            expect(minedBlock.hash.substring(0, minedBlock.difficulty))
+            .toEqual('0'.repeat(minedBlock.difficulty));
+        });
+
+
     });
 });
