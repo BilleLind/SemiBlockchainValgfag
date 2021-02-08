@@ -1,4 +1,3 @@
-const { it, expect } = require("@jest/globals");
 const Block = require("./block");
 const { GENESIS_DATA } = require('./config');
 const cryptoHash = require('./crypto-hash');
@@ -22,7 +21,7 @@ describe('Block', () => {
 
     
 
-    it('has a timestamp, lastHash, data, hash property', () =>{
+    it('has a timestamp, lastHash, data, hash property, nonce and difficulty', () =>{
         expect(block.timestamp).toEqual(timestamp);
         expect(block.lastHash).toEqual(lastHash);
         expect(block.hash).toEqual(hash);
