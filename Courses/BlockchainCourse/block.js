@@ -1,4 +1,4 @@
-const { GENESIS_DATA} = require('./config');
+const { GENESIS_DATA, MINE_RATE} = require('./config');
 const cryptoHash = require('./crypto-hash');
 
 class Block { // ved at wrappe parametrene i {} gør det så man ikke senere skal indføre det i denne rækkefølge, Map funktionen gør dette muligt
@@ -30,9 +30,12 @@ class Block { // ved at wrappe parametrene i {} gør det så man ikke senere ska
         return new this({timestamp, lastHash, data, difficulty, nonce, hash});
     }
 
-    static adjustDifficulty( { orginalBlock, timestamp}) {
-        const { difficulty } = orginalBlock;
+    static adjustDifficulty( { originalBlock, timestamp}) {
+        const { difficulty } = originalBlock;
 
+        //hvis det tager for lang tid
+        if ( (timestamp - originalBlock.timestamp) > MINE_RATE ) {return difficulty- 1;}
+        //hvis det går for hurtigt
         return difficulty + 1;
     }
 }
