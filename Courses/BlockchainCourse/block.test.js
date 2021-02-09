@@ -1,25 +1,16 @@
 const Block = require("./block");
-const { GENESIS_DATA } = require('./config');
+const { GENESIS_DATA, MINE_RATE } = require('./config');
 const cryptoHash = require('./crypto-hash');
 
 describe('Block', () => {
-    const timestamp = 'a-date';
+    const timestamp = 2000;
     const lastHash = 'foo-lastHash';
     const data = ['blockchain', 'data'];
     const hash = 'foo-hash';
-    // const block = new Block({
-    //     timestamp: timestamp,
-    //     lastHash: lastHash,
-    //     data: data,
-    //     hash: hash,
-    // }); dette er muligt da datatypen er den samme, så man kun skal skrive det ind en gang.
-
     const nonce = 1;
     const difficulty = 1;
 
     const block = new Block({timestamp, lastHash, data, hash, nonce, difficulty})
-
-    
 
     it('has a timestamp, lastHash, data, hash property, nonce and difficulty', () =>{
         expect(block.timestamp).toEqual(timestamp);
@@ -82,5 +73,20 @@ describe('Block', () => {
         });
 
 
+    });
+
+    describe('adjustDifficulty', () => {
+        it('raises the difficulty for a quickly mined block', () =>{
+            expect(Block.adjustDifficulty({ 
+                orignalBlock: block, timestamp: block.timestamp + MINE_RATE - 100
+             })).toEqual(block.difficulty + 1);
+        });
+        
+        it('lowers the difficulty for a slowly mined block', () =>{
+            expect(Block.adjustDifficulty({
+                orignalBlock: block, timestamp: block.timestamp + MINE_RATE + 100
+            })).toEqual(block.difficulty -1 );
+        });
+    
     });
 });
