@@ -29,5 +29,11 @@ class Block { // ved at wrappe parametrene i {} gør det så man ikke senere ska
 
         return new this({timestamp, lastHash, data, difficulty, nonce, hash});
     }
+
+    static adjustDifficulty( { orginalBlock, timestamp}) {
+        const { difficulty } = orginalBlock;
+
+        return difficulty + 1;
+    }
 }
 module.exports = Block;
