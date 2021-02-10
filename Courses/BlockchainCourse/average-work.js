@@ -6,6 +6,7 @@ const blockChain = new BlockChain();
 
 blockChain.addBlock( { data: 'initial'});
 
+
 let prevTimestmap, nextTimestamp, nextBlock, timeDiff, average;
 
 const times = [];
