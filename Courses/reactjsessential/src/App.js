@@ -1,23 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
 
+
+function Header(props) {
+  return ( 
+    <header>
+      <h1>{props.name} built notes</h1>
+    </header>
+  )
+}
+
+function Main(props) {
+  return (
+  <section>
+    <p>{props.text}</p>
+  </section>
+  )
+}
+
+function Footer(props) {
+  return ( 
+    <footer>
+      <div className="divider"></div>
+      <p>Footer of notes</p>
+      <p>{props.year}</p>
+    </footer>
+  )
+}
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header name="React"/>
+      <Main text="Here is the text"/>
+      <Footer year ={new Date().getFullYear()}/>
     </div>
   );
 }
