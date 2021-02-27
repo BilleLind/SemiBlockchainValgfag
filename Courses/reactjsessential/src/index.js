@@ -4,8 +4,13 @@ import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 import App from "./App";
 
+
+const [mostImportanObject, second] =["laptop", "pencil", "chargers"];
+// desctuctered array. i could also acces chargers with const [ , , power] and then console.log(power) the "," will act as placeholders and skip over
+console.log(mostImportanObject, second);
+
 ReactDOM.render(
-  <App/>
+  <App authorized = {true}/>    
   ,
   document.getElementById("root")
 );
