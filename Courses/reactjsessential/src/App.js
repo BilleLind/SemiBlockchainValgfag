@@ -1,23 +1,24 @@
 import './App.css';
 import subject from './'
 import sample from './sample.jpg'
-import { useReducer,  } from 'react';
+import { useState, useEffect  } from 'react';
 
-function App() {
-  const [checked, toogle] = useReducer(
-    (checked => !checked),
-    false
-  );
+//https://api.github.com/users/yokarak
 
+function App({login}) {
+  const [data, setDate] = useState(null);
+
+  useEffect(() => {
+    fetch(`https://api.github.com/users/${login}`)
+    .then((response) => response.json())
+    .then(setDate);
+  }, [])
   
 
-  return(
-  <>
-    <input type="checkbox" 
-    value={checked} onChange={() => toogle()}/>  
-     <p>{checked ? "checked" : "not checked"}</p>
-  </>
-  );
+  if(data) {
+    return <div>{JSON.stringify(data)}</div>
+  }
+  return <div>No User Available</div>
 }
 
 export default App;
