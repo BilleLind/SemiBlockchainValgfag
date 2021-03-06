@@ -47,7 +47,11 @@ Mining rate
 - the system reculates the mining rate closer to the set value, by either lowering og highering the dificulty of the mine.
 
 ---
-
+pup/sub
+- pub =publisher : only cares that getting the message out, sends messages
+- sub = subscriber: listens to the publishers that they are subscribed to, checks for messages
+is a great example for explaning how the blockchain gets updates from each block
+- each block listens or publishes to the blockchain
 
 
 
