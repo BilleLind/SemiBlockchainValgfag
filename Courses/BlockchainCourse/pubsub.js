@@ -24,4 +24,6 @@ class PubSub {
 
 const testPubSub = new PubSub();
 
-testPubSub.publisher.publish(CHANNELS.TEST, 'foo');
+setTimeout(() => {
+    testPubSub.publisher.publish(CHANNELS.TEST, 'foo');
+}, 1000); 

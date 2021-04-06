@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "test": "jest --watchALL",
-    "dev": "nodemon server.js"
+    "dev": "docker-compose up -d && nodemon server.js",
+    "start-redis": "docker-compose up -d"
   },
   "keywords": [
     "block",
