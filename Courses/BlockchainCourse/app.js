@@ -1,4 +1,6 @@
 const express = require('express');
+const http = require('http');
+const request = require('request');
 const bodyParser = require('body-parser');
 const axios = require('axios');
 const Blockchain = require('./blockchain');
@@ -24,7 +26,7 @@ const syncChains = () => { // just gonna do it with normal app.get. with try cat
     })
 }; */
 
-
+/*
 const syncChains = () => {
     try {
         app.get({url: `${ROOT_NODE_ADDRESS}/api/blocks`}, (res, req) => {
@@ -37,8 +39,18 @@ const syncChains = () => {
     } catch (error){
         console.log(error);
     }
-}
+} */
+const syncChains = () => {
+    request({url: `${ROOT_NODE_ADDRESS}/api/blocks`}, (error, response, body) =>{
+        if(!error && response.statusCode === 200) {
+            const rootChain = JSON.parse(body);
 
+            console.log('replace chain on a sync with:', rootChain);
+
+            blockchain.replaceChain(rootChain);
+        }
+    });
+}
 
 let PEER_PORT;
 if(process.env.GENERATE_PEER_PORT === 'true') {
@@ -68,4 +80,9 @@ app.post('/api/mine', (req, res) => {
 
     res.redirect('/api/blocks');
 });
-module.exports = app;
+//const server = http.createServer(app);
+
+app.listen(port, () => {
+    console.log(`Port: ${port}`);
+    syncChains();
+    });
