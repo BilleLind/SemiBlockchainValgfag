@@ -13,33 +13,7 @@ const pubsub = new PubSub( {blockchain });
 const DEFAULT_PORT = 3000;
 const ROOT_NODE_ADDRESS = `https://localhost:${DEFAULT_PORT}`;
 
-/* how to do body?
-const syncChains = () => { // just gonna do it with normal app.get. with try catch or axios :https://www.npmjs.com/package/axios
-    axios.request({ url :`${ROOT_NODE_ADDRESS}/api/blocks`})
 
-
-   .then(function(response){
-        const rootChain = JSON.parse
-    })
-    .catch(function(error) {
-        console.log(error);
-    })
-}; */
-
-/*
-const syncChains = () => {
-    try {
-        app.get({url: `${ROOT_NODE_ADDRESS}/api/blocks`}, (res, req) => {
-        const rootChain = JSON.parse(req.body);
-
-        console.log('replace chain on a sync with:', rootChain);
-
-        blockchain.replaceChain(rootChain);
-     });
-    } catch (error){
-        console.log(error);
-    }
-} */
 const syncChains = () => {
     request({url: `${ROOT_NODE_ADDRESS}/api/blocks`}, (error, response, body) =>{
         if(!error && response.statusCode === 200) {

@@ -7,7 +7,7 @@ class Block { // ved at wrappe parametrene i {} gør det så man ikke senere ska
         this.timestamp = timestamp;
         this.lastHash = lastHash
         this.hash = hash;
-        this.data = data;
+        this.data = data; 
         this.nonce = nonce;
         this.difficulty = difficulty;
     }
