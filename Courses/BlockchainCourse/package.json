@@ -9,7 +9,6 @@
     "dev": "docker-compose up -d && nodemon server.js",
     "dev-peer": "cross-env GENERATE_PEER_PORT='true' nodemon server.js",
     "start-redis": "docker-compose up -d"
-
   },
   "keywords": [
     "block",
