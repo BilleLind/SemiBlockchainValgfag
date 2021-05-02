@@ -1,7 +1,7 @@
 import {createStore, combineReducers} from 'redux';
 import { todos } from './components/reducers';
 
-const reducers = {};
+const reducers = {todos};
 
 const rootReducer = combineReducers(reducers);
 

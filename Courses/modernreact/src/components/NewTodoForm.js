@@ -1,10 +1,9 @@
 import React, {useState} from 'react';
-import { from } from 'webpack-sources/lib/CompatSource';
 import { connect } from 'react-redux';
 import { createTodo } from './actions';
 
 const NewTodoForm = ({ todos, onCreatePressed }) => {
-    const [inputValue, setInputValue] = useState("");
+    const [inputValue, setInputValue] = useState('');
 
     return (
         <div className="new-todo-form">
@@ -15,7 +14,7 @@ const NewTodoForm = ({ todos, onCreatePressed }) => {
             onChange={e=>setInputValue(e.target.value)}/>
             <button 
             onClick={() =>{
-                const isDublicateText = todos.some(todo =>todo.text === inputValue);
+                const isDublicateText = todos.some(todo => todo.text === inputValue);
                 if(!isDublicateText){
                     onCreatePressed(inputValue);
                     setInputValue('');
