@@ -9,7 +9,23 @@ class App extends Component {
 
   constructor() {
     super();
+    this.state = {
+      myAppointments: [],
+    }
   }
+
+  componentDidMount() {
+    fetch('./data.json')
+      .then(response => response.json())
+      .then(result => {
+        const apts = result.map(item => {
+          return item;
+        });
+        this.setState({
+          myAppointments: apts
+        });
+      });
+    }
 
   render() {
     return (
@@ -20,7 +36,7 @@ class App extends Component {
             <div className="container">
               <AddAppointments />
               <SearchAppointments />
-              <ListAppointments />
+              <ListAppointments appointments={this.state.myAppointments}/>
             </div>
           </div>
         </div>
