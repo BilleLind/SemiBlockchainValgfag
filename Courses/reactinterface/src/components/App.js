@@ -27,7 +27,7 @@ class App extends Component {
       });
     }
 
-  render() {
+  render() { Current https://www.linkedin.com/learning/react-js-building-an-interface-2019/using-a-render-template-expression?contextUrn=urn%3Ali%3AlearningCollection%3A6735163765207240704&u=37487420
     return (
       <main className="page bg-white" id="petratings">
       <div className="container">
