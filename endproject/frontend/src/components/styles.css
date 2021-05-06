@@ -1,0 +1,27 @@
+.nav {
+    display: flex;
+    justify-content: space-evenly;
+    text-decoration: none;   
+    margin: 1rem;
+    padding: 0.5rem;
+    border: 1px solid black;
+    border-radius: 0.25rem;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+}
+
+.flex {
+    display: flex;
+}
+
+
+.block {
+    border: 1px solid black;
+    border-radius: 0.25rem;
+    padding: 0.5rem;
+    margin: 1rem;
+    background-color: lightgray;
+}

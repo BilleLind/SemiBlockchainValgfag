@@ -7,7 +7,7 @@
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
     "client": "npm start --prefix frontend",
-    "dev": "concurrently \"npm run server\" \"npm run client\" ",
+    "dev": "concurrently \"npm run server\" \"npm run client\" "
   },
   "keywords": [],
   "author": "",
@@ -15,7 +15,8 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mongose": "0.0.2-security"
+    "mongoose": "^5.12.7",
+    "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
     "concurrently": "^6.0.2",
