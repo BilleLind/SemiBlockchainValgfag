@@ -30,13 +30,36 @@ export function Blockchain() {
                 <ul>
                     <li>Proof of work</li>
                     <li>Proof of staKe</li>
-                    <li>Delegate proof of stake</li>
+                    <li>Delegated proof of stake</li>
                     <li>Proof of Capacity</li>
-                    <li>Proof of elapsed time</li>
-                    <li>Proof of activity</li>
+                    <li>Proof of Elapsed time</li>
+                    <li>Proof of Activity</li>
                 </ul>
-                <p>Proof of work: er velegnet til en virtuel valuta, da sværheden i at validere en block gør at det ville være for dyrt at forsøge at ændre den til ens formål</p>
-                <p>Proof of stake: gør det nødvendigt at sætte værdi på højkant, f.eks. penge i en virtuel valuta,</p>
+                <p><b>Proof of work:</b> er velegnet til en virtuel valuta, da sværheden i at validere en block gør at det ville være for dyrt at forsøge at ændre den til ens formål</p>
+                <div style={{ display: 'flex', }}><ul>Virtuel valuta</ul> <ul>Vigtige documenter der ikke må ændres</ul></div>
+
+                <p><b>Proof of stake:</b> gør det nødvendigt at sætte værdi på højkant, f.eks. penge i en virtuel valuta,</p>
+                <div style={{display: 'flex'}}><ul>Hosting af Defi apps</ul> <ul>Virtuel valuta, det vil dog gøre det bedre for en at spare op i stedet for at bruge det</ul></div>
+
+                <p><b>Delegated proof of stake:</b> Bygger videre på Proof of stake, her stemmer man på en tredje part, hvor tredje parten har ansvaret for at validere blocks</p>
+                <div style={{ display: 'flex'}}>
+
+                </div>
+
+                <p><b>Proof of Capacity:</b> Modsat for proof of work, er det ens tilgængelige plads på ens hard disk som giver en mine og validerings rettigheder</p>
+                <div style={{ display: 'flex'}}>
+
+                </div>
+
+                <p><b>Proof of Elapsed time:</b> Alle noder får en random vente tid som de skal gå i pause tilstand, den første der vågner får rettigheden til at mine blokken, dette skaber et retfærdigt system hvor alle har lige store sandsynlighed for at vinde og kræver mindre processor krafter end proof of work</p>
+                <div style={{ display: 'flex'}}>
+
+                </div>
+
+                <p><b>Proof of Activity:</b></p>
+                <div style={{ display: 'flex'}}>
+                    
+                </div>
 
             </div>
             
