@@ -41,14 +41,14 @@ export function Blockchain() {
                 <p><b>Proof of stake:</b> gør det nødvendigt at sætte værdi på højkant, f.eks. penge i en virtuel valuta,</p>
                 <div style={{display: 'flex'}}><ul>Hosting af Defi apps</ul> <ul>Virtuel valuta, det vil dog gøre det bedre for en at spare op i stedet for at bruge det</ul></div>
 
-                <p><b>Delegated proof of stake:</b> Bygger videre på Proof of stake, her stemmer man på en tredje part, hvor tredje parten har ansvaret for at validere blocks</p>
+                <p><b>Delegated proof of stake:</b> Bygger videre på Proof of stake, her stemmer man på en tredje part, hvor tredje parten har ansvaret for at validere blocks, er hurtigere ned PoS</p>
                 <div style={{ display: 'flex'}}>
-
+                    <ul>Demokratisk Stemning</ul>
                 </div>
 
                 <p><b>Proof of Capacity:</b> Modsat for proof of work, er det ens tilgængelige plads på ens hard disk som giver en mine og validerings rettigheder</p>
                 <div style={{ display: 'flex'}}>
-
+                    <ul></ul>
                 </div>
 
                 <p><b>Proof of Elapsed time:</b> Alle noder får en random vente tid som de skal gå i pause tilstand, den første der vågner får rettigheden til at mine blokken, dette skaber et retfærdigt system hvor alle har lige store sandsynlighed for at vinde og kræver mindre processor krafter end proof of work</p>
@@ -58,7 +58,7 @@ export function Blockchain() {
 
                 <p><b>Proof of Activity:</b></p>
                 <div style={{ display: 'flex'}}>
-                    
+
                 </div>
 
             </div>
