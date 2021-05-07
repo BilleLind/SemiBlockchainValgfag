@@ -26,7 +26,7 @@ export function Blockchain() {
                 <h4>De forskellige metoder</h4>
                 <p>Der findes mange forskellige metoder til at sikre integriteten af et blockchain netværk, den mest kendte er nok proof of work,
                    <br></br> Det er nemlig denne der bruges af bitcoin og indtil videre af Etheruem</p>
-                <p>Følgende er de mest kendte/anvendte "decentralized consensus mechanism"</p>
+                <p>Følgende er de mest kendte/anvendte "consensus mechanism"</p>
                 <ul>
                     <li>Proof of work</li>
                     <li>Proof of staKe</li>
